@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class EfficientWordMarkov extends BaseWordMarkov{
-	Map myMap;
+	private Map myMap;
 	/**
 	 * Construct a EfficientWordMarkov object with
 	 * the specified order
