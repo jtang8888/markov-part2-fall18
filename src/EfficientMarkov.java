@@ -37,7 +37,7 @@ public class EfficientMarkov extends BaseMarkov{
 			if (!myMap.containsKey(key))
 			{
 				ArrayList<String> list = new ArrayList<String>();
-				if (i+myOrder+1 < text.length()-1)
+				if (i+myOrder+1 < text.length())
 				{
 					list.add(text.substring(i+myOrder, i+myOrder+1));
 					myMap.put(key, list);
@@ -46,7 +46,7 @@ public class EfficientMarkov extends BaseMarkov{
 					myMap.put(key, list);
 				}
 			} else {
-				if (i+myOrder+1 < text.length()-1)
+				if (i+myOrder+1 < text.length())
 				{
 					((ArrayList<String>) myMap.get(key)).add(text.substring(i+myOrder, i+myOrder+1));
 				} else {
