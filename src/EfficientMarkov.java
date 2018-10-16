@@ -31,7 +31,7 @@ public class EfficientMarkov extends BaseMarkov{
 		myMap = new HashMap<String , ArrayList<String>>();
 		myText = text;
 
-		for (int i = 0; i < text.length()-myOrder; i++)
+		for (int i = 0; i <= text.length()-myOrder; i++)
 		{
 			String key = text.substring(i, i+myOrder);
 			if (!myMap.containsKey(key))
