@@ -6,13 +6,13 @@ import java.util.NoSuchElementException;
 import java.util.*;
 
 public class EfficientMarkov extends BaseMarkov{
-	Map myMap;
+	private Map myMap;
 	/**
 	 * Construct a EfficientMarkov object with
 	 * the specified order
 	 * @param order size of this markov generator
 	 */
-	EfficientMarkov(int order)
+	public EfficientMarkov(int order)
 	{
 		super(order);
 		myMap = new HashMap<String , ArrayList<String>>();
@@ -20,7 +20,7 @@ public class EfficientMarkov extends BaseMarkov{
 	/**
 	 * Default constructor has order 3
 	 */
-	EfficientMarkov()
+	public EfficientMarkov()
 	{
 		super();
 		myMap = new HashMap<String , ArrayList<String>>();
@@ -44,6 +44,7 @@ public class EfficientMarkov extends BaseMarkov{
 				} else {
 					list.add(PSEUDO_EOS);
 					myMap.put(key, list);
+					break;
 				}
 			} else {
 				if (i+myOrder+1 < text.length())
