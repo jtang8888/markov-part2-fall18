@@ -10,7 +10,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 	 * the specified order
 	 * @param order size of this markov generator
 	 */
-	EfficientWordMarkov(int order)
+	public EfficientWordMarkov(int order)
 	{
 		super(order);
 		myMap = new HashMap<WordGram , ArrayList<String>>();
@@ -18,7 +18,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 	/**
 	 * Default constructor has order 3
 	 */
-	EfficientWordMarkov()
+	public EfficientWordMarkov()
 	{
 		super();
 		myMap = new HashMap<WordGram , ArrayList<String>>();
