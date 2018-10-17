@@ -59,9 +59,9 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 			if (!myMap.containsKey(key))
 			{
 				ArrayList<String> list = new ArrayList<String>();
-				if (i+myOrder != myWords.length-1)
+				if (i+myOrder != myWords.length)
 				{
-					list.add(myWords[i+myOrder+1]);
+					list.add(myWords[i+myOrder]);
 					myMap.put(key, list);
 				} else {
 					list.add(PSEUDO_EOS);
@@ -69,9 +69,9 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 					break;
 				}
 			} else {
-				if (i+myOrder != myWords.length-1)
+				if (i+myOrder != myWords.length)
 				{
-					((ArrayList<String>) myMap.get(key)).add(myWords[i+myOrder+1]);
+					((ArrayList<String>) myMap.get(key)).add(myWords[i+myOrder]);
 				} else {
 					((ArrayList<String>) myMap.get(key)).add(PSEUDO_EOS);
 				}
