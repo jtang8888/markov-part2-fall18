@@ -20,8 +20,8 @@ public class Benchmark {
 	 * @return a model that implements the proper interface
 	 */
 	private static MarkovInterface<String> getMarkov(int order) {
-		//return new BaseMarkov(order);
-		return new EfficientMarkov(order);
+		return new BaseMarkov(order);
+		//return new EfficientMarkov(order);
 	}
 	
 	/**
@@ -87,9 +87,9 @@ public class Benchmark {
 		File file = new File("data/"+fileName);
 		double[] data;
 		String source = TextSource.textFromFile(file);
-		int[] sizes = {100,200,400,800,1600,3200,6400,12800};
-		int order = 5;
-		MarkovInterface<String> model = new EfficientMarkov(order);
+		int[] sizes = {2000,4000,8000,16000,32000};
+		int order = 1999;
+		MarkovInterface<String> model = new BaseMarkov(order);
 		
 		// call benchmark and ignore value, first trial generates bogus data
 		data = benchmark(model,source,1000);
