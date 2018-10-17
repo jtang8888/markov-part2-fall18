@@ -24,35 +24,17 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 		myMap = new HashMap<WordGram , ArrayList<String>>();
 	}
 	
+	/**
+	 * Creates HashMap myMap from text passed into method
+	 * Each key corresponds to a new WordGram with specified order
+	 * Each value corresponds to an ArrayList<String> containing all words that follow each key
+	 * @param text the string from which keys and values are read/assigned
+	 */
 	@Override
 	public void setTraining(String text) {
 		myWords = text.split("\\s+");
 		myMap = new HashMap<String , ArrayList<String>>();
 		
-		/*for (int i = 0; i < myWords.length-myOrder; i++)
-		{
-			WordGram key = new WordGram(myWords, i, myOrder);
-			if (!myMap.containsKey(key))
-			{
-				ArrayList<String> list = new ArrayList<String>();
-				if (i+myOrder+1 < myWords.length-1)
-				{
-					list.add(myWords[i+myOrder+1]);
-					myMap.put(key, list);
-				} else {
-					list.add(PSEUDO_EOS);
-					myMap.put(key, list);
-				}
-			} else {
-				if (i+myOrder+1 < myWords.length-1)
-				{
-					((ArrayList<String>) myMap.get(key)).add(myWords[i+myOrder+1]);
-				} else {
-					((ArrayList<String>) myMap.get(key)).add(PSEUDO_EOS);
-				}
-			}
-		}*/
-
 		for (int i = 0; i <= myWords.length-myOrder; i++)
 		{
 			WordGram key = new WordGram(myWords, i, myOrder);
@@ -79,6 +61,12 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 		}
 	}
 	
+	/**
+	 * Returns ArrayList<String> of all words that follow specified key
+	 * @param key key in myMap
+	 * @return ArrayList<String> of following words
+	 * @throws NoSuchElementException if key is not found
+	 */
 	@Override
 	public ArrayList<String> getFollows(WordGram key){
 		if (!myMap.containsKey(key))

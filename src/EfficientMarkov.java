@@ -26,6 +26,12 @@ public class EfficientMarkov extends BaseMarkov{
 		myMap = new HashMap<String , ArrayList<String>>();
 	}
 
+	/**
+	 * Creates HashMap myMap from text passed into method
+	 * Each key corresponds to every substring with specified order
+	 * Each value corresponds to an ArrayList<String> containing all characters that follow each key
+	 * @param text the string from which keys and values are read/assigned
+	 */
 	@Override
 	public void setTraining(String text) {
 		myMap = new HashMap<String , ArrayList<String>>();
@@ -57,6 +63,12 @@ public class EfficientMarkov extends BaseMarkov{
 		}
 	}
 
+	/**
+	 * Returns ArrayList<String> of all characters that follow specified key
+	 * @param key key in myMap
+	 * @return ArrayList<String> of following characters
+	 * @throws NoSuchElementException if key is not found
+	 */
 	@Override
 	public ArrayList<String> getFollows(String key){
 		if (!myMap.containsKey(key))
